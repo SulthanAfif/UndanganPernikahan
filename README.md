@@ -1,90 +1,76 @@
-# Contoh Undangan Pernikahan Digital
+# Undangan Pernikahan Digital
 
-Project undangan pernikahan digital interaktif berbasis HTML/CSS/JS murni (tanpa framework).
+Website undangan pernikahan digital yang interaktif dan responsif. Tamu dapat melihat informasi mempelai dan acara, menjelajahi galeri, mengirim konfirmasi kehadiran melalui WhatsApp, serta mengakses halaman E-Angpao.
 
-> **Catatan:** Semua data di dalam project ini adalah **data contoh (dummy)**.  
-> Silakan ganti dengan data asli sebelum digunakan.
-
----
-
-## Struktur File
-
-| File                       | Keterangan                                                 |
-| -------------------------- | ---------------------------------------------------------- |
-| `undangan-pernikahan.html` | **Halaman Utama** — undangan lengkap                       |
-| `e-angpao.html`            | **Halaman Kirim Duit** — transfer bank + QRIS + konfirmasi |
-| `README.md`                | Dokumentasi project ini                                    |
+> **Catatan:** Nama, tanggal acara, nomor rekening, foto, dan informasi lain yang tersedia di project ini merupakan **data contoh (dummy)**. Ganti dengan data yang benar sebelum undangan dibagikan.
 
 ---
 
-## Fitur Halaman Utama
+## Masalah
 
-- Animasi amplop pembuka (envelope opening)
-- Musik background (play/pause)
-- Quote Al-Qur'an
-- Profil mempelai + nama keluarga
-- Love Story (timeline)
-- Gallery Prewedding + Lightbox
-- Detail acara (Akad & Resepsi)
-- Countdown timer real-time
-- Tombol Google Maps & RSVP WhatsApp
-- Tombol menuju E-Angpao
-- Buku Tamu (siap dihubungkan ke Google Sheet)
+Informasi pernikahan sering dibagikan melalui banyak media sehingga detail acara, lokasi, konfirmasi kehadiran, dan ucapan tamu tidak terkumpul dalam satu tempat.
 
-## Fitur Halaman E-Angpao
+## Solusi
 
-- Nomor rekening bank (BCA & Mandiri) + tombol salin
-- Placeholder QRIS
-- Form konfirmasi (nama, jumlah, ucapan) → langsung ke WhatsApp
-- Design menyesuaikan tema undangan
+Undangan Pernikahan Digital menyajikan informasi acara dalam satu website yang mudah dibuka melalui browser. Tamu dapat melihat detail acara, membuka lokasi di Google Maps, menghubungi keluarga melalui WhatsApp, dan mengirim ucapan melalui buku tamu yang dapat dihubungkan ke Google Sheets.
 
----
+## Fitur Utama
 
-## Cara Menjalankan
+**Undangan utama (`index.html`)**
 
-1. Download / clone semua file
-2. Buka `undangan-pernikahan.html` di browser (Chrome / Safari / Firefox)
-3. Atau upload ke hosting gratis (Netlify, Vercel, GitHub Pages) agar bisa dibagikan lewat link
+- Animasi amplop pembuka dan kontrol musik
+- Profil mempelai, keluarga, dan cerita perjalanan pasangan
+- Galeri prewedding dengan lightbox
+- Informasi akad dan resepsi beserta hitung mundur acara
+- Tautan lokasi Google Maps dan konfirmasi kehadiran via WhatsApp
+- Buku tamu yang dapat dihubungkan ke Google Sheets melalui Google Apps Script
+- Tautan menuju halaman E-Angpao
 
----
+**E-Angpao (`e-angpao.html`)**
 
-## Yang Perlu Diganti (Data Asli)
+- Informasi transfer bank dengan tombol salin nomor rekening
+- Area QRIS yang dapat diganti dengan QRIS asli
+- Form konfirmasi dan ucapan yang diteruskan melalui WhatsApp
 
-### Halaman Utama (`undangan-pernikahan.html`)
-
-- Nama mempelai pria & wanita
-- Nama orang tua & saudara
-- Tanggal, waktu, dan tempat acara
-- Link Google Maps
-- Nomor WhatsApp RSVP
-- Foto prewedding (ganti URL Unsplash)
-- Cerita Love Story
-- URL Google Apps Script untuk Buku Tamu (lihat petunjuk di dalam kode)
-
-### Halaman E-Angpao (`e-angpao.html`)
-
-- Nomor rekening + nama bank + atas nama
-- Gambar / link QRIS
-- Nomor WhatsApp tujuan konfirmasi transfer
-
----
-
-## Setup Buku Tamu (Google Sheet) — Opsional
-
-1. Buat Google Sheet baru
-2. Header baris 1: `timestamp` | `name` | `message`
-3. Extensions → Apps Script → paste kode `doGet` & `doPost` (ada di dalam file HTML)
-4. Deploy sebagai Web App (Execute as: Me, Who has access: Anyone)
-5. Copy URL → ganti `SCRIPT_URL` di dalam `undangan-pernikahan.html`
-
----
-
-## Teknologi
+## Tech Stack
 
 - HTML5
-- CSS3 (Flexbox, Grid, Animations)
+- CSS3 (Flexbox, Grid, animasi, dan responsive layout)
 - JavaScript (Vanilla)
-- Google Fonts (Great Vibes, Playfair Display, Poppins)
-- Unsplash (foto contoh)
+- Google Fonts
+- Google Apps Script dan Google Sheets (opsional, untuk buku tamu)
+
+## Demo
+
+Buka `index.html` di browser untuk melihat undangan. Halaman E-Angpao dapat dibuka melalui tombol di undangan atau langsung dari `e-angpao.html`.
+
+## Instalasi
+
+Project ini tidak memerlukan proses build atau instalasi dependency.
+
+```bash
+git clone https://github.com/SulthanAfif/UndanganPernikahan.git
+cd UndanganPernikahan
+```
+
+Buka `index.html` di browser, atau unggah file project ke hosting statis seperti GitHub Pages, Netlify, atau Vercel.
+
+## Kustomisasi
+
+Sebelum membagikan undangan, ganti data contoh di file HTML, termasuk:
+
+- Nama mempelai, keluarga, cerita, dan foto
+- Tanggal, waktu, dan lokasi acara
+- Tautan Google Maps dan nomor WhatsApp RSVP
+- Nomor rekening, nama pemilik rekening, QRIS, dan nomor WhatsApp konfirmasi E-Angpao
+- URL Google Apps Script pada variabel `SCRIPT_URL` di `index.html` jika buku tamu akan digunakan
+
+Untuk mengaktifkan buku tamu, siapkan Google Sheets dengan kolom `timestamp`, `name`, dan `message`, lalu deploy Google Apps Script sebagai Web App. Petunjuk dan kode integrasi tersedia di dalam `index.html`.
+
+## Repository
+
+📦 [github.com/SulthanAfif/UndanganPernikahan](https://github.com/SulthanAfif/UndanganPernikahan)
 
 ---
+
+**Undangan Pernikahan Digital** — informasi hari bahagia dalam satu undangan online.
